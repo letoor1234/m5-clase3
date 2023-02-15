@@ -1,25 +1,32 @@
 const space = document.querySelector("#space");
 const astronaut = document.querySelector("#space > img");
+
 const moveBtn = document.querySelector(".button");
 const colorBtn = document.querySelector(".colorBtn");
 const floatBtn = document.querySelector(".floatBtn");
 let blockMoveButton = false;
+
 const moveAstronautToRight = () => {
   astronaut.style.left = "700px";
 };
+
 const decreaseSizeAstronaut = () => {
   astronaut.style.transform = "scale(0.6)";
 };
+
 const increaseSizeAstronaut = () => {
   astronaut.style.transform = "scale(1.2)";
 };
+
 const restoreMoveAstronaut = () => {
   astronaut.style.left = "0px";
   astronaut.style.top = "";
 };
+
 const moveAstronautToTop = () => {
   astronaut.style.top = "10px";
 };
+
 let colorIndex = 0;
 const spaceIsTrippy = () => {
   if (colorIndex === 0) {
@@ -30,6 +37,7 @@ const spaceIsTrippy = () => {
     colorIndex = 0;
   }
 };
+
 const onMoveAstronaut = (to) => {
   if (!blockMoveButton) {
     if (to === "right") {
@@ -41,10 +49,12 @@ const onMoveAstronaut = (to) => {
     }
   }
 };
+
 const onRestoreAstronaut = () => {
   restoreMoveAstronaut();
   increaseSizeAstronaut();
 };
+
 window.addEventListener("keyup", (evt) => {
   if (evt.code === "Space") {
     onMoveAstronaut("right");
@@ -56,18 +66,22 @@ window.addEventListener("keyup", (evt) => {
     blockMoveButton = !blockMoveButton;
   }
 });
+
 moveBtn.addEventListener("click", (evt) => {
   evt.stopPropagation();
   onRestoreAstronaut();
 });
+
 colorBtn.addEventListener("click", (evt) => {
   evt.stopPropagation();
   spaceIsTrippy();
 });
+
 floatBtn.addEventListener("click", (evt) => {
   evt.stopPropagation();
   onMoveAstronaut("top");
 });
+
 let timer = 0;
 moveBtn.addEventListener("mousedown", (evt) => {
   evt.stopPropagation();
