@@ -1,0 +1,48 @@
+#space {
+  background-color: black;
+  width: auto;
+  height: 500px;
+}
+
+.astronaut {
+  height: 150px;
+  width: auto;
+  position: fixed;
+  left: 0;
+  bottom: 35vh;
+}
+
+.btn-div {
+  display: flex;
+  flex-direction: row;
+}
+
+.button {
+  background-color: #ebeb28;
+  font-size: 12px;
+  border-radius: 5px;
+  border-style: none;
+  height: 30px;
+  width: 80px;
+  padding: 8px;
+}
+
+.colorBtn {
+  background-color: #eb287d;
+  font-size: 12px;
+  border-radius: 5px;
+  border-style: none;
+  height: 30px;
+  width: 80px;
+  padding: 8px;
+}
+
+.floatBtn {
+  background-color: #087431;
+  font-size: 12px;
+  border-radius: 5px;
+  border-style: none;
+  height: 30px;
+  width: 80px;
+  padding: 8px;
+}
