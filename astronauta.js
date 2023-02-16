@@ -39,14 +39,12 @@ const spaceIsTrippy = () => {
 };
 
 const onMoveAstronaut = (to) => {
-  if (!blockMoveButton) {
-    if (to === "right") {
-      moveAstronautToRight();
-      decreaseSizeAstronaut();
-    } else if (to === "top") {
-      moveAstronautToTop();
-      decreaseSizeAstronaut();
-    }
+  if (to === "right") {
+    moveAstronautToRight();
+    decreaseSizeAstronaut();
+  } else if (to === "top") {
+    moveAstronautToTop();
+    decreaseSizeAstronaut();
   }
 };
 
@@ -69,7 +67,9 @@ window.addEventListener("keyup", (evt) => {
 
 moveBtn.addEventListener("click", (evt) => {
   evt.stopPropagation();
-  onRestoreAstronaut();
+  if (!blockMoveButton) {
+    onRestoreAstronaut();
+  }
 });
 
 colorBtn.addEventListener("click", (evt) => {
@@ -82,8 +82,9 @@ floatBtn.addEventListener("click", (evt) => {
   onMoveAstronaut("top");
 });
 
-let timer = 0;
 moveBtn.addEventListener("mousedown", (evt) => {
   evt.stopPropagation();
-  onMoveAstronaut("right");
+  if (!blockMoveButton) {
+    onMoveAstronaut("right");
+  }
 });
